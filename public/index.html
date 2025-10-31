@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>ChatterUp</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">ChatterUp</div>
+      <div class="panel-title">Online <span id="user-count">0</span></div>
+      <ul id="online-list" class="online-list"></ul>
+    </aside>
+
+    <main class="chat">
+      <header class="chat-header">
+        <div class="me">
+          <img id="me-avatar" class="avatar" alt="me" />
+          <div>
+            <div class="welcome">Welcome, <span id="me-name">Guest</span>!</div>
+            <div class="typing" id="typing-banner"></div>
+          </div>
+        </div>
+        <button id="toggle-sidebar" class="toggle">☰</button>
+      </header>
+
+      <section id="messages" class="messages"></section>
+
+      <form id="form" class="composer">
+        <input id="input" type="text" placeholder="Type a message..." autocomplete="off" />
+        <button type="submit" aria-label="Send">Send</button>
+      </form>
+    </main>
+  </div>
+
+  <!-- Onboarding modal -->
+  <div id="onboarding" class="modal">
+    <div class="modal-card">
+      <h2>Welcome to ChatterUp</h2>
+      <p>Enter your name to join the chat.</p>
+      <input id="name-input" type="text" placeholder="Your name" />
+      <button id="join-btn">Join</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+  <script src="/client.js" type="module"></script>
+</body>
+</html>
